@@ -9,3 +9,15 @@ export class Login {
         this.role = role;
     }
 }
+
+export class LoginResponse{
+    userId: string;
+    token: string;
+
+
+    constructor(userId: string, token: string, role: string) {
+        this.userId = userId;
+        this.token = token;
+    }
+}
+
