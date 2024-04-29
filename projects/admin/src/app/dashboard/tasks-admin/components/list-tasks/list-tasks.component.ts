@@ -42,7 +42,7 @@ export class ListTasksComponent implements OnInit {
     {name:"Complete" , id:1},
     {name:"In-Prossing" , id:2},
   ]
-  constructor(private serviceTasks : TasksService) { }
+  constructor(private serviceTasks : TasksService, public dialog : MatDialog) { }
 
   ngOnInit(): void {
    // this.createform()
@@ -58,13 +58,27 @@ export class ListTasksComponent implements OnInit {
       
     })
   }
+
+
+  addTask(){
+    const dialogRef = this.dialog.open(AddTaskComponent, {
+    
+      //data: {name: this.name, animal: this.animal},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+     
+    });
+  }
+
   // addTask() {
   //     const dialogRef = this.dialog.open(AddTaskComponent, {
   //       width: '750px',
   //     });
   
   //     dialogRef.afterClosed().subscribe(result => {
-  //       if(result) {
+  //       if(result) {n
+
   //         this.getAllTasks()
   //       }
   //     })
